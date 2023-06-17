@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<header>Manutenção de quartos</header>
+<body>
+    <table>
+      <tr>
+        <td>
+          <div class="room1">
+            <h2>Room 1</h2>
+            <button class="configure-button" onclick="openPopup('room-1')">Configurar</button>
+            <div id="room-1-popup" class="popup">
+              <div class="popup-content">
+                <h3>Configuração de quartos - Room 1</h3>
+                <div>Status: Reservado</div>
+                <div>01/05/23 - 08/05/23</div>
+                <div>
+                  Info: 2 Pessoas
+                  Cama Queen Size
+                  Elegancia, Paz E Conforto Para Duas Pessoas
+                </div>
+                <br>
+                <button onclick="closePopup('room-1')">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="room2">
+            <h2>Room 2</h2>
+            <button class="configure-button" onclick="openPopup('room-2')">Configurar</button>
+            <div id="room-2-popup" class="popup">
+              <div class="popup-content">
+                <h3>Configuração de quartos - Room 2</h3>
+                <div>Status: Manutenção</div>
+                <div>
+                  Info: 2 OU 3 PESSOAS
+                  1 CAMA KING SIZE OU 2 CAMAS SOLTEIRO (SOB PEDIDO)
+                   1 SOFÁ-CAMA DE SOLTEIRO
+                </div>
+                <br>
+                <button onclick="closePopup('room-2')">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="room3">
+            <h2>Room 3</h2>
+            <button class="configure-button" onclick="openPopup('room-3')">Configurar</button>
+            <div id="room-3-popup" class="popup">
+              <div class="popup-content">
+                <h3>Configuração de quartos - Room 3</h3>
+                <div>Status: Disponível</div>
+                <div>
+                  Info: 2 OU 3 PESSOAS
+                  1 CAMA KING SIZE OU 2 CAMAS SOLTEIRO
+                  1 SOFÁ-CAMA DE SOLTEIRO
+                </div>
+                <br>
+                <button onclick="closePopup('room-3')">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="room4">
+            <h2>Room 4</h2>
+            <button class="configure-button" onclick="openPopup('room-4')">Configurar</button>
+            <div id="room-4-popup" class="popup">
+              <div class="popup-content">
+                <h3>Configuração de quartos - Room 4</h3>
+                <div>Status: Manutenção</div>
+                <div>
+                  Info: 2 OU 4 PESSOAS
+                  1 CAMA KING SIZE OU 2 CAMAS SOLTEIRO
+                  2 SOFÁS-CAMA DE SOLTEIRO OU 1 SOFÁ-CAMA DE CASAL
+                  Elegante E Confortável Para 2 A 4 Pessoas.
+                </div>
+                <br>
+                <button onclick="closePopup('room-4')">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+  <style>
+    body {
+  background-color: #360e00;
+  text-align: center; 
+  align-content: center;
+  background-image: url(img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 100px;
+  padding: auto;
+}
+header{
+  color: rgb(0, 0, 0);
+  padding: 0;
+  margin: 50px;
+  position: relative;
+  font-size: 50px;
+}
+
+.room1{
+  margin-top: 50px;
+  padding: 50px;
+  background-image: url(img/Quarto\ Clássico.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgba(196, 55, 0, 0.87);
+  font-weight: bolder;
+}
+
+
+.room2{
+  margin-top: 50px;
+  padding: 50px;
+  background-image: url(img/Quarto\ Deluxe.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #e9e9e9;
+}
+.room3{
+  margin-top: 50px;
+  padding: 50px;
+  background-image: url(img/Suíte\ Júnior.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.room4{
+  margin-top: 50px;
+  padding: 50px;
+  background-image: url(img/Suíte.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.room1, .room2, .room3, .room4{ 
+  width: 150px;
+  height: 150px;
+  border: 3px solid #000000;
+  font-size: auto;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight:900
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(126, 126, 126, 0.5);
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: #000000;
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+
+  </style>  
+  <script>
+    function openPopup(roomId) {
+      var popup = document.getElementById(roomId + "-popup");
+      popup.style.display = "block";
+    }
+
+    function closePopup(roomId) {
+      var popup = document.getElementById(roomId + "-popup");
+      popup.style.display = "none";
+    }
+  </script>
+</html>
